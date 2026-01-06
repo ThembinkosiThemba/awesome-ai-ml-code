@@ -18,6 +18,7 @@ _Interactive CLI for exploring AI/ML implementations_
 - [Getting Started](#getting-started)
 - [Implementations](#implementations)
   - [Mini Neural Network](#mini-neural-network)
+  - [Mini Bigram LM](#mini-bigram-lm)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
@@ -56,28 +57,13 @@ uv run main.py
 
 **Location:** `mini-neural-network/`
 
-A simple 2-layer neural network built from scratch using NumPy. This implementation demonstrates:
+A simple 2-layer neural network built from scratch using NumPy
 
-- Forward propagation
-- Backward propagation (gradient descent)
-- Sigmoid activation function
-- Binary classification on non-linear data (circle classification problem)
+### Mini Bigram LM
 
-**Key Features:**
+**Location:** `mini-lm/`
 
-- Clean, educational implementation
-- Well-commented code explaining each step
-- Includes test script with synthetic dataset
-- Demonstrates both XOR problem and circle classification
-
-**Run it:**
-
-```bash
-cd mini-neural-network
-uv run test_nn.py
-```
-
-Or use the interactive CLI from the root directory.
+A simple Bigram Language Model implemented from scratch using NumPy
 
 ## Usage
 

@@ -34,7 +34,13 @@ IMPLEMENTATIONS = [
         name="Mini Neural Network",
         path="mini-neural-network",
         description="A 2-layer neural network from scratch. Demonstrates forward/backward propagation, gradient descent, and binary classification on non-linear data.",
-        command=["uv", "run", "test_nn.py"]
+        command=["uv", "run", "test_nn.py"],
+    ),
+    Implementation(
+        name="Mini Bigram LM",
+        path="mini_lm",
+        description="A simple Bigram Language Model implemented from scratch using NumPy. It learns the probability of a word given the previous word.",
+        command=["uv", "run", "main.py"],
     ),
 ]
 
@@ -45,16 +51,15 @@ def show_banner():
     banner.append("Awesome AI & ML\n", style="bold cyan")
     banner.append("A Collection of AI/ML Implementations from Scratch", style="dim")
 
-    console.print(Panel(
-        banner,
-        box=box.DOUBLE,
-        border_style="cyan",
-        padding=(1, 2)
-    ))
+    console.print(Panel(banner, box=box.DOUBLE, border_style="cyan", padding=(1, 2)))
 
     console.print()
-    console.print("[dim]This monorepo contains educational implementations of various AI and ML concepts,[/dim]")
-    console.print("[dim]algorithms, and papers. Each is built from the ground up to demonstrate core principles.[/dim]")
+    console.print(
+        "[dim]This monorepo contains educational implementations of various AI and ML concepts,[/dim]"
+    )
+    console.print(
+        "[dim]algorithms, and papers. Each is built from the ground up to demonstrate core principles.[/dim]"
+    )
     console.print()
 
 
@@ -65,7 +70,7 @@ def show_implementations_table():
         box=box.ROUNDED,
         show_header=True,
         header_style="bold magenta",
-        border_style="blue"
+        border_style="blue",
     )
 
     table.add_column("#", style="cyan", width=4, justify="right")
@@ -73,11 +78,7 @@ def show_implementations_table():
     table.add_column("Description", style="white")
 
     for idx, impl in enumerate(IMPLEMENTATIONS, 1):
-        table.add_row(
-            str(idx),
-            impl.name,
-            impl.description
-        )
+        table.add_row(str(idx), impl.name, impl.description)
 
     console.print(table)
     console.print()
@@ -86,10 +87,9 @@ def show_implementations_table():
 def run_implementation(impl: Implementation):
     """Run the selected implementation."""
     console.print()
-    console.print(Panel(
-        f"[bold green]Running:[/bold green] {impl.name}",
-        border_style="green"
-    ))
+    console.print(
+        Panel(f"[bold green]Running:[/bold green] {impl.name}", border_style="green")
+    )
     console.print()
 
     # Change to the implementation directory
@@ -97,11 +97,7 @@ def run_implementation(impl: Implementation):
 
     try:
         # Run the command in the implementation directory
-        result = subprocess.run(
-            impl.command,
-            cwd=impl_path,
-            check=True
-        )
+        subprocess.run(impl.command, cwd=impl_path, check=True)
 
         console.print()
         console.print(f"[bold green]✓[/bold green] {impl.name} completed successfully!")
@@ -112,7 +108,9 @@ def run_implementation(impl: Implementation):
         console.print(f"[red]Exit code: {e.returncode}[/red]")
     except FileNotFoundError:
         console.print()
-        console.print(f"[bold red]✗[/bold red] Could not find the implementation at {impl_path}")
+        console.print(
+            f"[bold red]✗[/bold red] Could not find the implementation at {impl_path}"
+        )
 
 
 def show_menu():
@@ -128,7 +126,7 @@ def show_menu():
         prompt_text = f"[cyan]Select an implementation (1-{len(IMPLEMENTATIONS)}) or 'q' to quit:[/cyan]"
         choice = Prompt.ask(prompt_text, choices=choices, default="q")
 
-        if choice.lower() == 'q':
+        if choice.lower() == "q":
             console.print()
             console.print("[yellow]Thanks for exploring! Happy learning! 👋[/yellow]")
             console.print()
@@ -143,10 +141,10 @@ def show_menu():
         continue_choice = Prompt.ask(
             "[cyan]Press Enter to return to menu, or 'q' to quit[/cyan]",
             choices=["", "q"],
-            default=""
+            default="",
         )
 
-        if continue_choice.lower() == 'q':
+        if continue_choice.lower() == "q":
             console.print()
             console.print("[yellow]Thanks for exploring! Happy learning! 👋[/yellow]")
             console.print()
