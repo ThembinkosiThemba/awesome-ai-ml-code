@@ -42,6 +42,12 @@ IMPLEMENTATIONS = [
         description="A simple Bigram Language Model implemented from scratch using NumPy. It learns the probability of a word given the previous word.",
         command=["uv", "run", "main.py"],
     ),
+    Implementation(
+        name="Decision Tree",
+        path="decision_tree",
+        description="This project implements a Decision Tree Classifier using pure NumPy. It's a classic supervised learning algorithm that makes decisions by splitting data based on information gain.",
+        command=["uv", "run", "main.py"],
+    ),
 ]
 
 

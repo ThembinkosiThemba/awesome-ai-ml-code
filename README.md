@@ -19,6 +19,7 @@ _Interactive CLI for exploring AI/ML implementations_
 - [Implementations](#implementations)
   - [Mini Neural Network](#mini-neural-network)
   - [Mini Bigram LM](#mini-bigram-lm)
+  - [Decision Tree](#decision-tree)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
@@ -57,13 +58,19 @@ uv run main.py
 
 **Location:** `mini-neural-network/`
 
-A simple 2-layer neural network built from scratch using NumPy
+A simple 2-layer neural network built from scratch using NumPy.
 
 ### Mini Bigram LM
 
 **Location:** `mini-lm/`
 
-A simple Bigram Language Model implemented from scratch using NumPy
+A simple Bigram Language Model implemented from scratch using NumPy.
+
+### Decision Tree
+
+**Location:** `decision_tree/`
+
+A simple **Decision Tree Classifier** from scratch using Python and NumPy.
 
 ## Usage
 
